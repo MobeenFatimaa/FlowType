@@ -6,7 +6,7 @@ export const useGameStore = create((set, get) => ({
 
   // Navigation & Core Mode Selection
   mode: '60s', // '15s', '30s', '60s', '25 words', '50 words', 'daily', 'scorpion', 'overdrive', 'mirror'
-  activeTab: 'typing', // 'home', 'typing', 'leaderboard', 'history', 'statistics', 'settings'
+  activeTab: 'home', // 'home', 'typing', 'leaderboard', 'history', 'statistics', 'settings'
 
   // Standard Performance Telemetry
   wpm: 0,

@@ -24,7 +24,6 @@ export default function SettingsView() {
   };
 
   const themes = [
-    { id: 'stoic', name: 'Stoic', tag: 'WARM EDITORIAL', bg: '#0d0d11', accent: '#ffffff' },
     { id: 'midnight', name: 'Midnight', tag: 'DEEP MONOCHROME', bg: '#050508', accent: '#f5f5f0' },
     { id: 'purple', name: 'Purple', tag: 'DARK VIOLET', bg: '#0d0d11', accent: '#a855f7' },
     { id: 'cyan', name: 'Cyan', tag: 'DARK AQUA', bg: '#041316', accent: '#00bcd4' },

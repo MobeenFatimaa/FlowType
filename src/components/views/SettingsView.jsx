@@ -24,8 +24,8 @@ export default function SettingsView() {
   };
 
   const themes = [
-    { id: 'midnight', name: 'Midnight', tag: 'DEEP MONOCHROME', bg: '#050508', accent: '#f5f5f0' },
-    { id: 'purple', name: 'Purple', tag: 'DARK VIOLET', bg: '#0d0d11', accent: '#a855f7' },
+    { id: 'stoic', name: 'Stoic', tag: 'DARK VIOLET', bg: '#0d0d11', accent: '#a855f7' },
+    { id: 'midnight', name: 'Midnight', tag: 'DEEP MONOCHROME', bg: '#050508', accent: '#38bdf8' },
     { id: 'cyan', name: 'Cyan', tag: 'DARK AQUA', bg: '#041316', accent: '#00bcd4' },
     { id: 'emerald', name: 'Emerald', tag: 'DARK GREEN', bg: '#06120e', accent: '#10b981' },
     { id: 'red', name: 'Red', tag: 'DARK CRIMSON', bg: '#14080a', accent: '#f43f5e' },
@@ -51,11 +51,11 @@ export default function SettingsView() {
             value={nameInput}
             onChange={(e) => setNameInput(e.target.value)}
             placeholder="Enter player name"
-            className="w-full sm:w-96 px-4 py-2.5 bg-[#131318] border border-[#232330] rounded-none text-sm text-white focus:outline-none focus:border-gray-500 font-serif tracking-wide"
+            className="w-full sm:w-96 px-4 py-2.5 bg-[var(--theme-surface)] border border-[var(--theme-border)] rounded-md text-sm text-white focus:outline-none focus:border-[var(--theme-accent)] font-serif tracking-wide transition-colors"
           />
           <button
             type="submit"
-            className="px-6 py-2.5 bg-[#f5f5f0] text-black font-serif font-bold text-xs uppercase tracking-widest hover:bg-white transition cursor-pointer min-w-[100px]"
+            className="px-6 py-2.5 bg-[var(--theme-accent)] text-black font-serif font-bold text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition cursor-pointer min-w-[100px] rounded-md shadow-md"
           >
             {savedStatus ? 'SAVED!' : 'SAVE'}
           </button>
@@ -81,8 +81,8 @@ export default function SettingsView() {
                 onClick={() => setTheme(t.id)}
                 className={`relative p-4 rounded-lg border flex items-center justify-between text-left transition-all ${
                   isSelected
-                    ? 'border-gray-500 bg-[#131318] shadow-xl'
-                    : 'border-[#232330] bg-[#0c0c10] hover:border-gray-600 hover:bg-[#111116]'
+                    ? 'border-[var(--theme-accent)] bg-[var(--theme-surface)] shadow-xl'
+                    : 'border-[var(--theme-border)] bg-[var(--theme-surface)]/40 hover:border-gray-600 hover:bg-[var(--theme-surface-hover)]'
                 }`}
               >
                 <div className="flex items-center space-x-4">
@@ -95,7 +95,7 @@ export default function SettingsView() {
                   {/* Theme Info */}
                   <div>
                     <p className="text-sm font-serif font-bold text-white">{t.name}</p>
-                    <p className="text-[10px] tracking-widest uppercase text-gray-500 font-sans mt-0.5">
+                    <p className="text-[10px] tracking-widest uppercase text-gray-400 font-sans mt-0.5">
                       {t.tag}
                     </p>
                   </div>
@@ -103,7 +103,7 @@ export default function SettingsView() {
 
                 {/* Active Selection Indicator */}
                 {isSelected && (
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#f5f5f0] shadow-sm"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[var(--theme-accent)] shadow-sm"></span>
                 )}
               </button>
             );

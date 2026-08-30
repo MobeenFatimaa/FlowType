@@ -1,5 +1,7 @@
 # FlowType
-
+<p align="center">
+  <img src="public/thumbnail.png" alt="FlowType Thumbnail" width="900">
+</p>
 **FlowType** is a modern, interactive speed-typing web application engineered for precision, speed, and focus. Built with React, Vite, Tailwind CSS v4, and Zustand, it features classic timed testing along with survival and streak-based typing mini-games.
 
 ---
